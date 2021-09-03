@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Maquette</title>
+        <link href="css/style.css" rel="stylesheet"> 
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Maquette de test - Boardriders">
+    </head>
+
+    <body>
+        <h1 class="main__title"><span class="main__title__cap">M</span>ON TITRE</h1>
+        <main>
+           <div id="card__top" class="card">
+               <div id="container">
+               <div id="img__top">
+                    <div class="img activ"></div>
+                    <div class="img"></div>
+                </div>
+            </div>
+               <p class="text text__top">Quam ob rem ut ii qui superiores sunt submittere se debent in amicitia, sic quodam modo inferiores extollere. Sunt enim quidam qui molestas amicitias faciunt, cum ipsi se contemni putant; quod non fere contingit nisi iis qui etiam contemnendos se arbitrantur; qui hac opinione non modo verbis sed etiam opere levandi sunt.</p>
+           </div>
+           <div id="card__bottom" class="card">
+            <div id="container__bottom">
+                <div id="img__bottom">
+                    <div class="img__bottom activ"></div>
+                    <div class="img__bottom"></div>
+            </div>
+            </div>
+            <p class="text text__bottom">Quam ob rem ut ii qui superiores sunt submittere se debent in amicitia, sic quodam modo inferiores extollere. Sunt enim quidam qui molestas amicitias faciunt, cum ipsi se contemni putant; quod non fere contingit nisi iis qui etiam contemnendos se arbitrantur; qui hac opinione non modo verbis sed etiam opere levandi sunt.</p>
+        </div>
+        </main>
+    </body>
+    <script>
+        // SLIDE TOP
+                let slides = document.querySelectorAll('#img__top .img');
+                let currentSlide = 0;
+
+                const nextSlide = () => {
+                    goToSlide(currentSlide + 1);
+                }
+
+                let slideInterval = setInterval(nextSlide, 1000); // Vitesse de défilement en ms
+
+                const goToSlide = (s) => {
+
+                    slides[currentSlide].className = 'img';
+                
+                    currentSlide = (s + slides.length) % slides.length;
+                    slides[currentSlide].className = 'img activ';
+                }
+    </script>
+    <script>            
+        // SLIDE BOTTOM
+                let slidesBottom = document.querySelectorAll('#img__bottom .img__bottom');
+                let currentSlideBottom = 0;
+
+                const nextSlideBottom = () => {
+                    goToSlideBottom(currentSlideBottom + 1);
+                }
+
+                let slideIntervalBottom = setInterval(nextSlideBottom, 1000); // Vitesse de défilement en ms
+
+                const goToSlideBottom = (s) => {
+
+                    slidesBottom[currentSlideBottom].className = 'img__bottom';
+                
+                    currentSlideBottom = (s + slidesBottom.length) % slides.length;
+                    slidesBottom[currentSlideBottom].className = 'img__bottom activ';
+                }
+    </script>
+</html>
